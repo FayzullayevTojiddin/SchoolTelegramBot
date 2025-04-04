@@ -9,3 +9,6 @@ class CourseState(StatesGroup):
 
 class TeacherState(StatesGroup):
     main = State()
+
+class FeedbakState(StatesGroup):
+    main = State()

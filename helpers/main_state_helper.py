@@ -1,13 +1,12 @@
 from locales.message import (
     courses_message, teachers_message, feedbak_message, login_message
 )
-
 from keyboards.inline_keyboards import (
-    list_course_keyboard, list_teacher_keyboard
+    list_course_keyboard, list_teacher_keyboard, cancel_feedback_keyboard
 )
 
 from states.any_states import (
-    CourseState, TeacherState
+    CourseState, TeacherState, FeedbakState
 )
 
 def main_state_response(request):
@@ -20,7 +19,9 @@ def main_state_response(request):
         text = teachers_message
         state = TeacherState.main
     elif request == 'feedbacks':
-        pass
+        keyboard = cancel_feedback_keyboard()
+        text = feedbak_message
+        state = FeedbakState.main
     elif request == 'login':
         pass
     else:

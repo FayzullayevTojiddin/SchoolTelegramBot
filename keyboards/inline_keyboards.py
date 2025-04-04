@@ -1,5 +1,5 @@
 from aiogram.utils.keyboard import InlineKeyboardBuilder
-from locales.keyboard import main_keyboard as main_keyboard_array, back_main_button_name
+from locales.keyboard import main_keyboard as main_keyboard_array, back_main_button_name, cancel_send_feedback_button
 from models.course import Course
 from models.teacher import Teacher
 
@@ -35,4 +35,12 @@ def list_teacher_keyboard():
         callback_data=back_main_button_name['callback']
     )
     keyboard.adjust(1)
+    return keyboard.as_markup()
+
+def cancel_feedback_keyboard():
+    keyboard = InlineKeyboardBuilder()
+    keyboard.button(
+        text=cancel_send_feedback_button['name'],
+        callback_data=cancel_send_feedback_button['callback']
+    )
     return keyboard.as_markup()

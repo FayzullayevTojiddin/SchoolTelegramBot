@@ -37,3 +37,7 @@ back_to_main_message_guest = """
 back_to_courses_list_message = """
 🔙 **Kurslar ro'yxatiga qaytdingiz!** 📚
 """
+
+cancel_write_feedback_message = """
+✖️ Fikr bildirish bekor qilindi. Bosh sahifaga qaytdingiz.
+"""
