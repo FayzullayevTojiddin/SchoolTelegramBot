@@ -41,3 +41,17 @@ back_to_courses_list_message = """
 cancel_write_feedback_message = """
 ✖️ Fikr bildirish bekor qilindi. Bosh sahifaga qaytdingiz.
 """
+
+not_found_course = """
+*❌ Kurs topilmadi.*
+"""
+
+join_request_sended_true = """
+📝 *So'rovingiz yuborildi!*
+Iltimos kutib turing, tez orada javob beramiz. 💬
+Agar boshqa savollaringiz bo'lsa, bizga yozing! 😊
+"""
+
+join_request_sended_false = """
+Xabar yuborishda xatolik. 
+"""

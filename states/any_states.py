@@ -6,6 +6,7 @@ class MainState(StatesGroup):
 
 class CourseState(StatesGroup):
     main = State()
+    select = State()
 
 class TeacherState(StatesGroup):
     main = State()

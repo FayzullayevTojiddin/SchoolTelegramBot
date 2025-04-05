@@ -1,7 +1,16 @@
 from aiogram.utils.keyboard import InlineKeyboardBuilder
-from locales.keyboard import main_keyboard as main_keyboard_array, back_main_button_name, cancel_send_feedback_button
+from locales.keyboard import (
+    main_keyboard as main_keyboard_array, 
+    back_main_button_name, 
+    cancel_send_feedback_button,
+    back_to_course_button,
+    join_to_course_name,
+    back_to_course_btn
+)
+
 from models.course import Course
 from models.teacher import Teacher
+from models.joinCourse import JoinCourse
 
 def main_keyboard():
     keyboard = InlineKeyboardBuilder()
@@ -42,5 +51,32 @@ def cancel_feedback_keyboard():
     keyboard.button(
         text=cancel_send_feedback_button['name'],
         callback_data=cancel_send_feedback_button['callback']
+    )
+    return keyboard.as_markup()
+
+def get_teacher_from_course(teacher, user_id, course_id):
+    keyboard = InlineKeyboardBuilder()
+    if teacher:
+        keyboard.button(callback_data=f"teacher:{str(teacher.id)}", text=teacher.full_name)
+    
+    joined = JoinCourse.check_join(user_id, course_id)
+    button = join_to_course_name(joined, course_id)
+    keyboard.button(
+        text=button['name'],
+        callback_data=button['callback']
+    )
+    keyboard.button(
+        text=back_to_course_button['name'],
+        callback_data=back_to_course_button['callback']
+    )
+    keyboard.adjust(1)
+    return keyboard.as_markup()
+
+def back_to_course_keyboard(course_id):
+    keyboard = InlineKeyboardBuilder()
+    button = back_to_course_btn(course_id)
+    keyboard.button(
+        text=button['name'],
+        callback_data=button['callback']
     )
     return keyboard.as_markup()
