@@ -5,7 +5,8 @@ from locales.keyboard import (
     cancel_send_feedback_button,
     back_to_course_button,
     join_to_course_name,
-    back_to_course_btn
+    back_to_course_btn,
+    back_to_teachers_button
 )
 
 from models.course import Course
@@ -54,11 +55,10 @@ def cancel_feedback_keyboard():
     )
     return keyboard.as_markup()
 
-def get_teacher_from_course(teacher, user_id, course_id):
+def get_teacher_from_course(teachers, user_id, course_id):
     keyboard = InlineKeyboardBuilder()
-    if teacher:
-        keyboard.button(callback_data=f"teacher:{str(teacher.id)}", text=teacher.full_name)
-    
+    for teacher in teachers:
+        keyboard.button(callback_data=f"teacher:{str(teacher.id)}", text=teacher.full_name)    
     joined = JoinCourse.check_join(user_id, course_id)
     button = join_to_course_name(joined, course_id)
     keyboard.button(
@@ -79,4 +79,25 @@ def back_to_course_keyboard(course_id):
         text=button['name'],
         callback_data=button['callback']
     )
+    return keyboard.as_markup()
+
+def show_teacher_keyboard(teacher_id):
+    keyboard = InlineKeyboardBuilder()
+    teacher = Teacher.get_by_id(teacher_id)
+    courses = Teacher.get_courses(teacher_id)
+    for course in courses:
+        keyboard.button(
+            text=course.name,
+            callback_data=f"course:{course.id}"
+        )
+    button = back_to_teachers_button
+    keyboard.button(
+        text="📞 Bog‘lanish",
+        url=f"https://t.me/{teacher.telegram}"
+    )
+    keyboard.button(
+        text=button['name'],
+        callback_data=button['callback']
+    )
+    keyboard.adjust(1)
     return keyboard.as_markup()

@@ -32,6 +32,8 @@ async def join_to_course_message(callback: types.CallbackQuery, state: FSMContex
     if response:
         message, keyboard = response
         await callback.bot.edit_message_text(
+            chat_id=callback.from_user.id,
+            message_id=callback.message.message_id,
             text=message,
             reply_markup=keyboard
         )

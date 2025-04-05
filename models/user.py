@@ -3,7 +3,7 @@ from .base import BaseModel
 
 class User(BaseModel):
     id = AutoField()
-    user_id = BigIntegerField()
+    user_id = BigIntegerField(unique=True)
     first_name = CharField(max_length=255)
     last_name = CharField(max_length=255, null=True)
     username = CharField(max_length=100, null=True)

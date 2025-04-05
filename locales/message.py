@@ -38,6 +38,10 @@ back_to_courses_list_message = """
 🔙 **Kurslar ro'yxatiga qaytdingiz!** 📚
 """
 
+back_to_teachers_message = """
+🔙 **Ustozlar ro'yxatiga qaytdingiz!** 🧑‍🏫
+"""
+
 cancel_write_feedback_message = """
 ✖️ Fikr bildirish bekor qilindi. Bosh sahifaga qaytdingiz.
 """
@@ -55,3 +59,9 @@ Agar boshqa savollaringiz bo'lsa, bizga yozing! 😊
 join_request_sended_false = """
 Xabar yuborishda xatolik. 
 """
+
+not_found_teacher = """
+*❌ O'qituvchi topilmadi.*
+"""
+
+success_sended_feedback = "😊 Fikringiz uchun tashakkur! \n\nBiz uni albatta ko‘rib chiqamiz va xizmatimizni yanada yaxshilashga harakat qilamiz!"

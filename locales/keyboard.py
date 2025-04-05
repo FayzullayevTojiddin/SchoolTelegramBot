@@ -20,6 +20,10 @@ back_to_course_button = {
     'callback' : "back:courses"
 }
 
+back_to_teachers_button = {
+    'name' : "🔙 O'qituvchilar",
+    'callback' : "back:teachers"
+}
 
 def back_to_course_btn(course_id):
     return {

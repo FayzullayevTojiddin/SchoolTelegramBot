@@ -13,3 +13,6 @@ class TeacherState(StatesGroup):
 
 class FeedbakState(StatesGroup):
     main = State()
+
+class TeacherState(StatesGroup):
+    main = State()
