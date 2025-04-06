@@ -3,7 +3,7 @@ class Config:
     database = {
         'name' : "ForSchool",
         'user' : "admin",
-        'password' : "Tjk2007",
+        'password' : "root",
         'host' : "localhost",
         'port' : 3306
     }

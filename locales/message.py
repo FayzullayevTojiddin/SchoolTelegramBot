@@ -1,34 +1,39 @@
 start_message = """
 **Xush kelibsiz!**  
 Sizni o'quv markazimizda ko'rishdan xursandmiz! 😊  
-Quyidagi tugmalar orqali kerakli xizmatlarga o'tishingiz mumkin:"""
+Quyidagi tugmalar orqali kerakli xizmatlarga o'tishingiz mumkin:
+"""
 
 courses_message = """
 Bizning kurslarimizni tanlash orqali ta'limda yangi imkoniyatlar oching!  
 Quyida ta'lim dasturlarimiz bilan tanishing. Sizga qulay kursni tanlashda yordam berishga tayyormiz! 🌟  
-Agar qo'shimcha ma'lumot olishni xohlasangiz, biz bilan bog'laning! 📚 """
+Agar qo'shimcha ma'lumot olishni xohlasangiz, biz bilan bog'laning! 📚 
+"""
 
 teachers_message = """
 Bizning malakali o'qituvchilarimiz sizni kutmoqda!  
 Ular nafaqat bilim, balki haqiqiy hayotiy tajribalarni ham sizga taqdim etadi.  
 Har bir o'qituvchi o'z sohasida yetakchi mutaxassis va sizni har tomonlama qo'llab-quvvatlashga tayyor. 🌟  
-Agar o'qituvchilarimiz haqida ko'proq bilmoqchi bo'lsangiz, biz bilan bog'laning! ✨"""
+Agar o'qituvchilarimiz haqida ko'proq bilmoqchi bo'lsangiz, biz bilan bog'laning! ✨
+"""
 
 feedbak_message = """
 Sizning fikrlaringiz biz uchun juda muhim!  
 Agar kurslarimiz yoki xizmatlarimizga oid taklif yoki fikrlaringiz bo'lsa, iltimos, bizga yuboring.  
 Biz har bir fikrni diqqat bilan o'rganib, imkon qadar yaxshilanishga harakat qilamiz.🙏  
-Har qanday taklif yoki fikr uchun rahmat! 🌟"""
+Har qanday taklif yoki fikr uchun rahmat! 🌟
+"""
 
 login_message = """
-Hisobingizga kirish uchun quyidagi tugmani bosing.  
-Agar hisobingiz yo'q bo'lsa, ro'yxatdan o'tishingiz mumkin!  
+Hisobingizga kirish uchun loginni kiiriting.  
 Barcha kerakli ma'lumotlar uchun biz bilan bog'laning.  
-Hisobingizga kiring va ta'limni boshlang! 📚"""
+Hisobingizga kiring va ta'limni boshlang! 📚
+"""
 
 not_found_messsage = """
 **❌ No'malum buyruq**  
-Kechirasiz, siz kiritgan buyruq tanilmagan. Iltimos, to'g'ri buyruqni tanlang yoki yordam uchun quyidagi variantlarni sinab ko'ring.  """
+Kechirasiz, siz kiritgan buyruq tanilmagan. Iltimos, to'g'ri buyruqni tanlang yoki yordam uchun quyidagi variantlarni sinab ko'ring.  
+"""
 
 back_to_main_message_guest = """
 🔙 **Bosh sahifaga qaytdingiz!** ✨
@@ -44,6 +49,10 @@ back_to_teachers_message = """
 
 cancel_write_feedback_message = """
 ✖️ Fikr bildirish bekor qilindi. Bosh sahifaga qaytdingiz.
+"""
+
+cancel_login_message = """
+✖️ Loginga kirish bekor qilindi. Bosh sahifaga qaytdingiz.
 """
 
 not_found_course = """
@@ -65,3 +74,32 @@ not_found_teacher = """
 """
 
 success_sended_feedback = "😊 Fikringiz uchun tashakkur! \n\nBiz uni albatta ko‘rib chiqamiz va xizmatimizni yanada yaxshilashga harakat qilamiz!"
+
+isset_login_true = """
+🔐 *Parolingizni kiriting:*
+Iltimos, quyidagi maydonga **parolingizni** kiriting.
+⚠️ *Eslatma:* Parol maxfiy bo‘lishi kerak va hech kimga ko‘rsatmaslikka harakat qiling.
+✋ Agar parolni unutgan bo'lsangiz, yordam uchun admin bilan bog'laning.
+"""
+
+isset_login_false = """
+❌ *Login noto‘g‘ri kiritildi!*
+Iltimos, **to‘g‘ri loginni** qayta kiriting.
+
+⚠️ Agar login unutgan bo‘lsangiz, yordam uchun admin bilan bog'laning.
+"""
+
+write_message_please_message = """
+🙅‍♂️ Xato! Faqat matn kiriting, boshqa turdagi fayl yubormang!
+"""
+
+password_true = """
+✅ Tizimga muvaffaqiyatli kirish amalga oshirildi!
+"""
+
+password_false = """
+❌ *Parol noto‘g‘ri kiritildi!*
+Iltimos, **to‘g‘ri parolni** qayta kiriting.
+
+⚠️ Agar parolni unutgan bo‘lsangiz, yordam uchun admin bilan bog'laning.
+"""

@@ -18,7 +18,7 @@ def main_keyboard():
     for callback, name in main_keyboard_array.items():
         keyboard.button(callback_data=callback, text=name)
 
-    keyboard.adjust(2)
+    keyboard.adjust(1)
     return keyboard.as_markup()
 
 def list_course_keyboard():

@@ -5,6 +5,17 @@ main_keyboard = {
     "login" : "🔑 Login"
 }
 
+teacher_panel_keyboard = {}
+
+admin_panel_keyboard = {}
+
+student_panel_keyboard = {
+    "homeworks" : "🏠 Uyga Vazifalar",
+    "grades" : "📊 Baholar",
+    "teachers" : "👨‍🏫 Ustozlar",
+    "quit" : "🚪 Chiqish"
+}
+
 back_main_button_name = {
     'name' : "🔙 Bosh sahifa",
     'callback' : "back:main"

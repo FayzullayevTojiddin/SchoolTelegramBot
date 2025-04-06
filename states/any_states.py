@@ -16,3 +16,7 @@ class FeedbakState(StatesGroup):
 
 class TeacherState(StatesGroup):
     main = State()
+
+class LoginState(StatesGroup):
+    login = State()
+    password = State()

@@ -7,6 +7,7 @@ from .teacher import Teacher
 from .joinCourse import JoinCourse
 from .CourseTeacher import CourseTeacher
 from .feedback import Feedback
+from .login import Login
 
 def create_tables():
     with database:
@@ -16,5 +17,6 @@ def create_tables():
             Teacher,
             JoinCourse,
             CourseTeacher,
-            Feedback
+            Feedback,
+            Login
         ])

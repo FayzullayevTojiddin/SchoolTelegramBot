@@ -7,7 +7,8 @@ from locales.message import (
     not_found_messsage, 
     back_to_courses_list_message, 
     cancel_write_feedback_message,
-    back_to_teachers_message
+    back_to_teachers_message,
+    cancel_login_message
 )
 
 from keyboards.inline_keyboards import (
@@ -54,6 +55,10 @@ def get_request_from_guest(request):
         message = back_to_teachers_message
         keyboard = list_teacher_keyboard()
         state = TeacherState.main
+    elif request == 'login':
+        message = cancel_login_message
+        keyboard = main_keyboard()
+        state = MainState.main
     else:
         message = not_found_messsage
         keyboard = None
