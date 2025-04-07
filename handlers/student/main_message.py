@@ -1,14 +1,20 @@
-from aiogram import Router, types
+from aiogram import Router, F, types
 from aiogram.fsm.context import FSMContext
-from states.any_states import MainState
+
 from helpers.main_state_helper import main_state_response
+
+from states.student import StudentMain
+
+from models.user import User
+
 from helpers.not_found import not_found_message
 
 router = Router(name=__name__)
 
-@router.callback_query(MainState.main)
+@router.callback_query(StudentMain.main)
 async def main_state_message(callback: types.CallbackQuery, state: FSMContext):
-    response = main_state_response(callback.data)
+    role = User.get_role(callback.from_user.id)
+    response = main_state_response(callback.data, role)
     if response:
         keyboard, text, state_to = response
         await callback.bot.edit_message_text(

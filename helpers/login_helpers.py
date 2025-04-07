@@ -7,11 +7,12 @@ from locales.message import (
 
 from keyboards.cancel_ceyboards import cancel_login_keyboard
 
-from keyboards.inline_keyboards import main_keyboard
-
 from states.any_states import (
-    LoginState, MainState
+    LoginState
 )
+
+from .get_role_helper import get_role_state
+from .get_main_keyboard_helper import get_main_keyboard
 
 async def get_login(login, state):
     try:
@@ -34,18 +35,20 @@ async def check_password(password, state, user_id):
     try:
         data = await state.get_data()
         if Login.check_password(data['login'], password):
-            await state.clear()
-            message = password_true
-            keyboard = main_keyboard()
-            state_to = MainState.main
             login = Login.isset_login(data['login'])
+            role = login.role
+            keyboard = get_main_keyboard(role)
+            message = password_true
+            state_to = get_role_state(role)
             log_to(login.role, user_id)
+            await state.clear()
+            await state.set_state(state_to)
         else:
             message = password_false
             keyboard = cancel_login_keyboard()
-            state_to = LoginState.password
+            await state.set_state(LoginState.password)
 
-        return message, keyboard, state_to
+        return message, keyboard
     except Exception as error:
         print(error)
         return False

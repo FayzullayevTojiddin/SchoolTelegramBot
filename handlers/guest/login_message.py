@@ -39,11 +39,10 @@ async def get_password_message(message: types.Message, state: FSMContext):
         password = message.text
         response = await check_password(password, state, message.from_user.id)
         if response:
-            text, keyboard, state_to = response
+            text, keyboard = response
             await message.answer(
                 text=text,
                 reply_markup=keyboard,
             )
-            await state.set_state(state_to)
         else:
             await message.answer(text=not_found_messsage)

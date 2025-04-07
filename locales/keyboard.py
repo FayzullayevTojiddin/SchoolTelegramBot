@@ -5,15 +5,24 @@ main_keyboard = {
     "login" : "🔑 Login"
 }
 
+guest_panel_keyboard = {
+    "courses" : "🎓 Curslar ro'yxati",
+    "teachers" : "👩‍🏫 O'qituvchilar ro'yxati",
+    "feedbacks" : "💬 Fikr va takliflar",
+    "login" : "🔑 Login"
+}
+
+
 teacher_panel_keyboard = {}
 
 admin_panel_keyboard = {}
 
 student_panel_keyboard = {
-    "homeworks" : "🏠 Uyga Vazifalar",
-    "grades" : "📊 Baholar",
-    "teachers" : "👨‍🏫 Ustozlar",
-    "quit" : "🚪 Chiqish"
+    "groups"         : "📚 Guruhlar",
+    "notifications"  : "🔔 Bildirishnomalar",
+    "profile"        : "👤 Mening Profilim",
+    "payments"       : "💸 To'lovlar",
+    "quit"           : "🚪 Chiqish"
 }
 
 back_main_button_name = {

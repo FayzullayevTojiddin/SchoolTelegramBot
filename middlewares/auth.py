@@ -3,12 +3,14 @@ from aiogram.types import Update
 from typing import Callable, Dict, Any, Awaitable
 from models.user import User
 
+from aiogram.fsm.context import FSMContext
+
 class AuthMiddleware(BaseMiddleware):
     async def __call__(
         self,
         handler: Callable[[Update, Dict[str, Any]], Awaitable[Any]],
         event: Update,
-        data: Dict[str, Any]
+        data: Dict[str, Any],
     ) -> Any:
         if event.message:
             user_from = event.message.from_user

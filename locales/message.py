@@ -103,3 +103,7 @@ Iltimos, **to‘g‘ri parolni** qayta kiriting.
 
 ⚠️ Agar parolni unutgan bo‘lsangiz, yordam uchun admin bilan bog'laning.
 """
+
+quit_message = """
+🚪 Chiqdingiz.
+"""
