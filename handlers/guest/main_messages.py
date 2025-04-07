@@ -10,7 +10,7 @@ router = Router(name=__name__)
 @router.callback_query(MainState.main)
 async def main_state_message(callback: types.CallbackQuery, state: FSMContext):
     role = User.get_role(callback.from_user.id)
-    response = main_state_response(callback.data, role)
+    response = main_state_response(callback.data, role, callback.from_user.id)
     if response:
         keyboard, text, state_to = response
         await callback.bot.edit_message_text(

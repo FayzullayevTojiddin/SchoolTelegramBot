@@ -7,3 +7,4 @@ class Group(BaseModel):
     id = AutoField()
     teacher_id = ForeignKeyField(Teacher, backref='groups', on_delete='SET NULL', null=True)
     course_id = ForeignKeyField(Course, backref='groups', on_delete='SET NULL', null=True)
+    name = CharField(max_length=100)

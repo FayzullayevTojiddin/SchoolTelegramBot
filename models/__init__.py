@@ -8,6 +8,11 @@ from .joinCourse import JoinCourse
 from .CourseTeacher import CourseTeacher
 from .feedback import Feedback
 from .login import Login
+from .student import Student
+from .group import Group
+from .GroupStudent import GroupStudent
+from .notification import Notification
+from .paymentStudent import PaymentStudent
 
 def create_tables():
     with database:
@@ -18,5 +23,10 @@ def create_tables():
             JoinCourse,
             CourseTeacher,
             Feedback,
-            Login
+            Login,
+            Student,
+            Group,
+            GroupStudent,
+            Notification,
+            PaymentStudent
         ])

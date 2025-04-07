@@ -1,5 +1,6 @@
 from peewee import *
 from .base import BaseModel
+from .login import Login
 
 class Teacher(BaseModel):
     id = AutoField()
@@ -13,6 +14,7 @@ class Teacher(BaseModel):
     achievements = CharField(max_length=200)
     feedback = CharField(max_length=100)
     description = CharField(max_length=1000)
+    login = ForeignKeyField(Login, backref='teacher', on_delete='SET NULL', null=True)
     created_at = TimestampField()
 
     @classmethod

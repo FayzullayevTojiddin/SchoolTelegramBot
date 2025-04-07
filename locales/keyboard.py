@@ -19,8 +19,8 @@ admin_panel_keyboard = {}
 
 student_panel_keyboard = {
     "groups"         : "📚 Guruhlar",
-    "notifications"  : "🔔 Bildirishnomalar",
     "profile"        : "👤 Mening Profilim",
+    "notifications"  : "🔔 Bildirishnomalar",
     "payments"       : "💸 To'lovlar",
     "quit"           : "🚪 Chiqish"
 }

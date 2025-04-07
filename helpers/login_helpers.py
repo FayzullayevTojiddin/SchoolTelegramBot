@@ -40,7 +40,7 @@ async def check_password(password, state, user_id):
             keyboard = get_main_keyboard(role)
             message = password_true
             state_to = get_role_state(role)
-            log_to(login.role, user_id)
+            log_to(login.role, user_id, login.id)
             await state.clear()
             await state.set_state(state_to)
         else:
@@ -53,8 +53,9 @@ async def check_password(password, state, user_id):
         print(error)
         return False
 
-def log_to(role, user_id):
+def log_to(role, user_id, login_id):
     user = User.get_user(user_id)
     if user:
         user.role = role
+        user.login = login_id
         user.save()

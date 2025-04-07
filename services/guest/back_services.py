@@ -7,13 +7,13 @@ from keyboards.inline_keyboards import (
 )
 
 from locales.message import (
-    back_to_main_message_guest, cancel_write_feedback_message, back_to_teachers_message, back_to_courses_list_message, cancel_login_message, not_found_messsage
+    back_to_main_message, cancel_write_feedback_message, back_to_teachers_message, back_to_courses_list_message, cancel_login_message, not_found_messsage
 )
 
 
 def get_request_from_guest(request):
     if request == 'main':
-        message = back_to_main_message_guest
+        message = back_to_main_message
         keyboard = main_keyboard()
         state = MainState.main
     elif request == 'courses':

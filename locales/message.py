@@ -35,7 +35,7 @@ not_found_messsage = """
 Kechirasiz, siz kiritgan buyruq tanilmagan. Iltimos, to'g'ri buyruqni tanlang yoki yordam uchun quyidagi variantlarni sinab ko'ring.  
 """
 
-back_to_main_message_guest = """
+back_to_main_message = """
 🔙 **Bosh sahifaga qaytdingiz!** ✨
 """
 
@@ -107,3 +107,7 @@ Iltimos, **to‘g‘ri parolni** qayta kiriting.
 quit_message = """
 🚪 Chiqdingiz.
 """
+
+list_groups_message_student = """
+📚 *Siz a'zo bo‘lgan guruhlar:*
+ """
