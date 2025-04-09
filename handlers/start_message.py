@@ -5,6 +5,8 @@ from locales.message import start_message as start_message_text
 from helpers.get_main_keyboard_helper import get_main_keyboard
 from models.user import User
 
+from states.any_states import MainState
+
 router = Router(name=__name__)
 
 @router.message(CommandStart())
@@ -15,3 +17,4 @@ async def start_message(message: types.Message, state: FSMContext):
         text=start_message_text,
         reply_markup=response
     )
+    await state.set_state(MainState.main)

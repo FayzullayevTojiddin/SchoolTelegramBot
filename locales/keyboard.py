@@ -62,3 +62,14 @@ def join_to_course_name(joined, course_id):
             'name' : "📝 Kursga yozilish",
             'callback' : f"join_course:{course_id}"
         }
+    
+def show_group_student_button(group_id, teacher_id):
+    return {
+        f"inGroupStudents:group={group_id}" : "👥 Guruhdagi o'quvchilar",
+        "Attendance" : "✅ yo‘qlama",
+        "Grade" : "📊 Baholar",
+        f"teacher:{teacher_id}" : "👨‍🏫 guruh o'qituvchisi",
+        f"homeworks:group_id={group_id}" : "📝 Uyga vazifalar",
+        f"materials:group_id={group_id}" : "📁 Dars materiallari",
+        f"group_about:{group_id}" : "ℹ️ Guruh haqida"
+    }

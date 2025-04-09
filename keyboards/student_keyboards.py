@@ -1,7 +1,8 @@
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-from locales.keyboard import back_main_button_name
-
+from locales.keyboard import (
+    back_main_button_name, show_group_student_button
+)
 def get_groups_keyboard(groups):
     keyboard = InlineKeyboardBuilder()
     for group in groups:
@@ -44,6 +45,18 @@ def get_payments_keyboard(payments):
             text=f"💸 : {payment.price}",
             callback_data=f"payment:{payment.id}"
         )
+    keyboard.button(
+        text=back_main_button_name['name'],
+        callback_data=back_main_button_name['callback']
+    )
+    keyboard.adjust(1)
+    return keyboard.as_markup()
+
+def show_group_keyboard(group_id, teacher_id):
+    keyboard = InlineKeyboardBuilder()
+    buttons = show_group_student_button(group_id, teacher_id)
+    for callback, name in buttons.items():
+        keyboard.button(text=name, callback_data=callback)
     keyboard.button(
         text=back_main_button_name['name'],
         callback_data=back_main_button_name['callback']

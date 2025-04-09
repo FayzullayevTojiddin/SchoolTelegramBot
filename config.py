@@ -1,5 +1,5 @@
 class Config:
-    BOT_TOKEN="7475735660:AAEk4_2AdiwC1GjER1mR0FIrtf4o1hkLjHA"
+    BOT_TOKEN="7475735660:AAGOON_YmMaiaBZ99I4U3Oupk4foOmx1n3M"
     database = {
         'name' : "ForSchool",
         'user' : "root",
