@@ -101,3 +101,10 @@ def show_teacher_keyboard(teacher_id):
     )
     keyboard.adjust(1)
     return keyboard.as_markup()
+
+def write_message_to_student_keyboard(student):
+    keyboard = InlineKeyboardBuilder()
+    keyboard.button(
+        text="💬 Xabar yozish", callback_data=f"write-message:{student.id}"
+    )
+    return keyboard.as_markup()

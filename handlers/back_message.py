@@ -9,7 +9,7 @@ router = Router(name=__name__)
 @router.callback_query(F.data.startswith('back:'))
 async def back_message(callback: types.CallbackQuery, state: FSMContext):
     action = action = callback.data.split(":")[1]
-    response = get_back_response(callback.bot, action, callback.from_user.id)
+    response = get_back_response(callback)    
     if response:
         message, keyboard, state_to = response
         await callback.bot.edit_message_text(

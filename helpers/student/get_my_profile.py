@@ -11,7 +11,7 @@ def get_student_profile_message(my):
         f"*Ism:* {my.first_name}\n"
         f"*Familiya:* {my.last_name}\n"
         f"*Otasining ismi:* {my.father_name}\n"
-        f"*Tug‘ilgan sana:* {my.birthday.strftime('%Y-%m-%d')}\n"
+        f"*Tug‘ilgan sana:* {my.birthday}\n"
         f"*Holat:* {'✅ Faol' if my.status else '⛔️ Nofaol'}\n"
         f"*Qo‘shimcha ma’lumot:* {my.description if my.description else '—'}\n"
     )

@@ -111,3 +111,40 @@ quit_message = """
 list_groups_message_student = """
 📚 *Siz a'zo bo‘lgan guruhlar:*
  """
+
+this_student_you = "O'zingizga xabar yubora olmaysiz !"
+
+get_message_to_send = """
+📨 Xabar yuborish
+
+Quyida yozmoqchi bo‘lgan xabaringiz matnini kiriting.
+Ushbu xabar to‘g‘ridan-to‘g‘ri o‘quvchiga yuboriladi.
+
+✍️ Yozishni boshlashingiz mumkin.
+"""
+
+get_message_canel_to_send = """
+✖️ Xabar yuborish bekor qilindi. Bosh sahifaga qaytdingiz.
+"""
+
+message_is_not_text_error = """
+🤖 Xatolik: Bu yerda faqat matnli xabar yuborishingiz mumkin.
+Iltimos, boshqa turdagi kontent yubormang.
+"""
+
+message_sent_successfully = "✅ Sizning xabaringiz muvaffaqiyatli tarzda yuborildi."
+
+notification_deleted_successfully = "✅ Xabar muvaffaqiyatli o‘chirildi."
+
+notification_deleted_error = "❗️ Xabarni o‘chirib bo‘lmadi, qayta urinib ko‘ring."
+
+def get_student_message(student):
+    return (
+        "👤 *O‘quvchi ma’lumotlari*\n\n"
+        f"📛 *Ismi:* {student.first_name} {student.last_name}\n"
+        f"🧔 *Otasining ismi:* {student.father_name}\n"
+        f"🎂 *Tug‘ilgan sanasi:* {student.birthday}\n"
+        f"📝 *Qo‘shimcha ma’lumot:* {student.description or '–'}\n"
+        f"📅 *Ro‘yxatga olingan sana:* {student.created_at.strftime('%Y-%m-%d')}\n"
+        f"📌 *Holati:* {'Faol ✅' if student.status else 'Faol emas ❌'}"
+    )

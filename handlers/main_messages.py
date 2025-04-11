@@ -11,7 +11,6 @@ router = Router(name=__name__)
 @router.callback_query(MainState.main)
 @router.callback_query(StudentMain.main)
 async def main_state_message(callback: types.CallbackQuery, state: FSMContext):
-    print(await state.get_state())
     role = User.get_role(callback.from_user.id)
     response = main_state_response(callback.data, role, callback.from_user.id)
     if response:

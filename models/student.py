@@ -3,7 +3,6 @@ from .base import BaseModel
 from .login import Login
 
 class Student(BaseModel):
-    id = AutoField()
     first_name = CharField(max_length=100)
     last_name = CharField(max_length=100)
     father_name = CharField(max_length=100)
@@ -11,4 +10,3 @@ class Student(BaseModel):
     description = TextField(null=True)
     login = ForeignKeyField(Login, backref='student', on_delete='SET NULL', null=True)
     status = BooleanField(default=True)
-    created_at = TimestampField()

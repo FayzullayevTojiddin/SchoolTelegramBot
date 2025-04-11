@@ -2,11 +2,9 @@ from peewee import *
 from .base import BaseModel
 
 class Login(BaseModel):
-    id = AutoField()
     login = CharField(max_length=30)
     password = CharField(max_length=50)
     role = CharField(max_length=10)
-    created_at = TimestampField()
 
     @classmethod
     def isset_login(cls, login):

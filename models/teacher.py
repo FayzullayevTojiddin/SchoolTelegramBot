@@ -3,7 +3,6 @@ from .base import BaseModel
 from .login import Login
 
 class Teacher(BaseModel):
-    id = AutoField()
     user_id = BigIntegerField(unique=True)
     phone_number = CharField(max_length=13)
     telegram = CharField(max_length=50)
@@ -15,7 +14,6 @@ class Teacher(BaseModel):
     feedback = CharField(max_length=100)
     description = CharField(max_length=1000)
     login = ForeignKeyField(Login, backref='teacher', on_delete='SET NULL', null=True)
-    created_at = TimestampField()
 
     @classmethod
     def get_courses(cls, teacher_id):

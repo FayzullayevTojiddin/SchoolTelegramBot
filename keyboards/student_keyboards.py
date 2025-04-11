@@ -58,8 +58,8 @@ def show_group_keyboard(group_id, teacher_id):
     for callback, name in buttons.items():
         keyboard.button(text=name, callback_data=callback)
     keyboard.button(
-        text=back_main_button_name['name'],
-        callback_data=back_main_button_name['callback']
+        text="🔙 Kurslar ro'yxatiga qaytish",
+        callback_data="back:groups"
     )
     keyboard.adjust(1)
     return keyboard.as_markup()

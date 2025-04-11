@@ -5,11 +5,13 @@ from keyboards.student_keyboards import (
     show_group_keyboard
 )
 
-from keyboards.about_keyboards import get_about_group_keyboard
+from keyboards.about_keyboards import back_to_group_keyboard
 
 from helpers.student.get_group_list import (
-    get_group_message, get_group as group_in
+    get_group_message, get_group as group_in, open_group_message
 )
+
+from states.student import StudentMain
 
 from models.teacher import Teacher
 
@@ -17,7 +19,7 @@ def show_group(student_id, group_id):
     checkStudent = check_join_student(student_id, group_id)
     if checkStudent:
         keyboard = show_group_keyboard(group_id, student_id)
-        text = "test"
+        text = open_group_message(group_id)
         state = None
         return text, keyboard, state
     else:
@@ -32,9 +34,8 @@ def get_group(student_id, group_id):
         text = get_group_message(
             group.name, group.id, teacher.full_name, len(students)
         )
-        keyboard = get_about_group_keyboard()
+        keyboard = back_to_group_keyboard(group_id)
         state = None
         return text, keyboard, state
     else:
         return False
-    

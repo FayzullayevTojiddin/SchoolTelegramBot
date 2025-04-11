@@ -5,8 +5,11 @@ from helpers.teacher_helper import get_teacher
 
 from locales.message import not_found_teacher
 
+from states.any_states import CourseState
+
 router = Router(name=__name__)
 
+@router.callback_query(CourseState.main)
 @router.callback_query(F.data.startswith('teacher:'))
 async def get_teacher_message(callback: types.CallbackQuery, state: FSMContext):
     teacher_id = callback.data.split(":")[1]

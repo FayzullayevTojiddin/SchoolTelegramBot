@@ -35,3 +35,11 @@ def get_group_message(groupName, groupId, teacherName, studentCounts):
 
 def get_group(group_id):
     return Group.get_by_id(group_id)
+
+def open_group_message(group_id):
+    return f"""🎉 Siz guruhga muvaffaqiyatli kirdingiz!
+
+Guruh ID: {group_id}
+
+Endi siz guruhdagi barcha faoliyatlarni kuzatib borishingiz mumkin!
+"""

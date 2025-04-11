@@ -12,6 +12,9 @@ class AuthMiddleware(BaseMiddleware):
         event: Update,
         data: Dict[str, Any],
     ) -> Any:
+        state: FSMContext = data['state']
+        current_state = await state.get_state()
+        print(current_state)
         if event.message:
             user_from = event.message.from_user
 

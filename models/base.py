@@ -1,5 +1,6 @@
-from peewee import Model, MySQLDatabase
+from peewee import *
 from config import Config
+import datetime
 
 database = MySQLDatabase(
     Config.database['name'],
@@ -12,5 +13,7 @@ database = MySQLDatabase(
 
 
 class BaseModel(Model):
+    id = AutoField()
+    created_at = TimestampField(default=datetime.datetime.now)
     class Meta:
         database = database

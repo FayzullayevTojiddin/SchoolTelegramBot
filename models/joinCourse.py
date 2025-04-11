@@ -4,7 +4,6 @@ from models.user import User
 from models.course import Course
 
 class JoinCourse(BaseModel):
-    id = AutoField()
     user = ForeignKeyField(User, backref='joined_courses', on_delete='CASCADE', field='user_id')
     course = ForeignKeyField(Course, backref='joined_users', on_delete='CASCADE')
 

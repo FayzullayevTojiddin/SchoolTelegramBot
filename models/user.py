@@ -3,14 +3,12 @@ from .base import BaseModel
 from .login import Login
 
 class User(BaseModel):
-    id = AutoField()
     user_id = BigIntegerField(unique=True)
     first_name = CharField(max_length=255)
     last_name = CharField(max_length=255, null=True)
     username = CharField(max_length=100, null=True)
     role = CharField(max_length=10, default="guest")
     login = ForeignKeyField(Login, backref='users', on_delete='SET NULL', null=True)
-    created_at = TimestampField()
 
     @classmethod
     def get_role(cls, user_id):

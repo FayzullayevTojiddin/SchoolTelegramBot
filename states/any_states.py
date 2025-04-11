@@ -20,3 +20,6 @@ class TeacherState(StatesGroup):
 class LoginState(StatesGroup):
     login = State()
     password = State()
+
+class SendMessage(StatesGroup):
+    get_message = State()
