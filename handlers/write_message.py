@@ -9,6 +9,7 @@ from states.any_states import SendMessage
 
 router = Router(name=__name__)
 
+@router.callback_query(F.data.startswith('write-teacher:'))
 @router.callback_query(F.data.startswith('write-message:'))
 async def get_message_for_writing(callback: types.CallbackQuery, state: FSMContext):
     try:
@@ -37,6 +38,7 @@ async def send_notification_to(message: types.Message, state: FSMContext):
         )
         await state.set_state(state_to)
     except Exception as error:
+        print(error)
         await message.answer(
             text="Problem in bot"
         )

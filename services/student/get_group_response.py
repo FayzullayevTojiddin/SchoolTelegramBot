@@ -17,18 +17,20 @@ from services.any.students_list_services import get_students_list
 def get_group_response(callback: types.CallbackQuery):
     value = callback.data.split(":")[1]
     action = callback.data.split(":")[0]
+    student_id = get_student_id(callback.from_user.id)
     if action == 'group':
-        response = show_group(1, value)
+        response = show_group(student_id, value)
     elif action == 'group_about':
-        response = get_group(1, value)
+        response = get_group(student_id, value)
     elif action == 'materials':
         group_id = callback.data.split('materials:group_id=')[1]
-        student_id = get_student_id(callback.from_user.id)
         response = get_list_materail(group_id, student_id)
     elif action == 'inGroupStudents':
         group_id = callback.data.split('inGroupStudents:group=')[1]
-        student_id = get_student_id(callback.from_user.id)
         response = get_students_list(group_id, student_id)
+    elif action == 'homeworks':
+        group_id = callback.data.split('homeworks:group_id=')[1]
+        
     else:
         print(callback.data)
         return False

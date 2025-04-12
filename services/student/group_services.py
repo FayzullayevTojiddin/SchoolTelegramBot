@@ -11,6 +11,8 @@ from helpers.student.get_group_list import (
     get_group_message, get_group as group_in, open_group_message
 )
 
+from helpers.teacher.get_teacher import get_teacher_id_by_group_id
+
 from states.student import StudentMain
 
 from models.teacher import Teacher
@@ -18,7 +20,8 @@ from models.teacher import Teacher
 def show_group(student_id, group_id):
     checkStudent = check_join_student(student_id, group_id)
     if checkStudent:
-        keyboard = show_group_keyboard(group_id, student_id)
+        teacher_id = get_teacher_id_by_group_id(group_id)
+        keyboard = show_group_keyboard(group_id, teacher_id)
         text = open_group_message(group_id)
         state = None
         return text, keyboard, state
