@@ -25,7 +25,7 @@ async def get_notification_message(callback: types.CallbackQuery, state: FSMCont
 
 @router.callback_query(F.data.startswith("delete_notification:"))
 async def delete_notification_message(callback: types.CallbackQuery, state: FSMContext):
-    response = delete_notification(callback, state)
+    response = await delete_notification(callback, state)
     if response:
         text, keyboard, state_to = response
         await callback.bot.edit_message_text(

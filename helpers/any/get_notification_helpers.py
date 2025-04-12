@@ -8,7 +8,7 @@ def get_notification(notification_id):
 
 def get_notification_message(notification: Notification) -> str:
     status = "📬 Yangi xabar" if not notification.read else "✅ Ilgari o‘qilgan"
-    first_name = get_first_name(notification.to_id)
+    first_name = get_first_name(notification.from_in_id)
     return (
         f"{status}\n"
         f"👤 Kimdan: {first_name}\n"

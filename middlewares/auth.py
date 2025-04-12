@@ -14,7 +14,7 @@ class AuthMiddleware(BaseMiddleware):
     ) -> Any:
         state: FSMContext = data['state']
         current_state = await state.get_state()
-        print(current_state)
+        # print(current_state)
         if event.message:
             user_from = event.message.from_user
 

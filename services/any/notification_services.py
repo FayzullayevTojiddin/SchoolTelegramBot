@@ -30,7 +30,8 @@ def get_notification(notification_id, user_id):
     else:
         return False
     
-def delete_notification(callback, old_state):
+async def delete_notification(callback, old_state):
+    old_state = await old_state.get_state()
     notification_id = callback.data.split(":")[1]
     notification = get_notification_helper(notification_id)
     student_id = get_student_id(callback.from_user.id)

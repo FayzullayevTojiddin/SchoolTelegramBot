@@ -1,6 +1,7 @@
 
 from peewee import ModelSelect
 from models.login import Login
+from models.user import User
 
 from helpers.student.get_student import get_student
 
@@ -20,3 +21,11 @@ def get_first_name(login_id):
 def get_login_by_student_id(student_id):
     student = get_student(student_id)
     return student.login.id
+
+def get_login_by_chat_id(chat_id):
+    try:
+        user = User.get_user(chat_id)
+        return user.login
+    except Exception as error:
+        print(error)
+        return False
