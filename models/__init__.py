@@ -14,6 +14,7 @@ from .GroupStudent import GroupStudent
 from .notification import Notification
 from .paymentStudent import PaymentStudent
 from .material import Material
+from .homework import HomeWork
 
 def create_tables():
     with database:
@@ -30,5 +31,6 @@ def create_tables():
             GroupStudent,
             Notification,
             PaymentStudent,
-            Material
+            Material,
+            HomeWork
         ])

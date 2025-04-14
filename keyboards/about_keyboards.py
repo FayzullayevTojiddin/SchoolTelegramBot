@@ -29,3 +29,11 @@ def get_about_notification_keyboard(notification_id):
     )
     keyboard.adjust(1)
     return keyboard.as_markup()
+
+def get_about_homework_keyboard(group_id):
+    keyboard = InlineKeyboardBuilder()
+    keyboard.button(
+        text="🔙 Uyga vazifalar ro'yxatiga qaytish",
+        callback_data=f"homeworks:group_id={group_id}"
+    )
+    return keyboard.as_markup()

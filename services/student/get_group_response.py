@@ -12,6 +12,8 @@ from .group_material_services import (
 
 from helpers.student.get_student import get_student_id
 
+from services.student.get_homework_response import get_homeworks_list
+
 from services.any.students_list_services import get_students_list
 
 def get_group_response(callback: types.CallbackQuery):
@@ -30,7 +32,7 @@ def get_group_response(callback: types.CallbackQuery):
         response = get_students_list(group_id, student_id)
     elif action == 'homeworks':
         group_id = callback.data.split('homeworks:group_id=')[1]
-        
+        response = get_homeworks_list(group_id)
     else:
         print(callback.data)
         return False

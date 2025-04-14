@@ -15,4 +15,4 @@ class Group(BaseModel):
     @classmethod
     def getHomeWorks(cls, group_id: int):
         group = cls.getGroupById(group_id)
-        return group.homeworks
+        return group.homeworks.select()
