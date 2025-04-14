@@ -14,5 +14,6 @@ class Group(BaseModel):
     
     @classmethod
     def getHomeWorks(cls, group_id: int):
+        from .homework import HomeWork
         group = cls.getGroupById(group_id)
-        return group.homeworks.select()
+        return group.homeworks.select().where(HomeWork.completed == False)
