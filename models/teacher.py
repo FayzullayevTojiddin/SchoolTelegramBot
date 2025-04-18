@@ -3,7 +3,6 @@ from .base import BaseModel
 from .login import Login
 
 class Teacher(BaseModel):
-    user_id = BigIntegerField(unique=True)
     phone_number = CharField(max_length=13)
     telegram = CharField(max_length=50)
     full_name = CharField(max_length=100)

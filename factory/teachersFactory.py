@@ -7,7 +7,6 @@ def create_teacher(count: int):
     try:
         for _ in range(count):
             Teacher.create(
-                user_id=faker.random_int(min=100000000, max=999999999),
                 phone_number=faker.phone_number(),
                 telegram=faker.user_name(),
                 full_name=faker.name(),

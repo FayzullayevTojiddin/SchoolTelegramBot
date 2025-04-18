@@ -17,3 +17,6 @@ class User(BaseModel):
     @classmethod
     def get_user(cls, user_id):
         return cls.get_or_none(cls.user_id == user_id)
+
+    class Meta():
+        table_name = "telegram_user"
