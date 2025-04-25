@@ -17,3 +17,6 @@ class Course(BaseModel):
             return []
         except:
             return []
+        
+    class Meta():
+        table_name = 'courses'

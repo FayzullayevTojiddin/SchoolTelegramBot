@@ -24,3 +24,6 @@ class JoinCourse(BaseModel):
         except Exception as e:
             print(e)
             return False
+        
+    class Meta():
+        table_name = 'joincourses'

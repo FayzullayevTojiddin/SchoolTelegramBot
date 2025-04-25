@@ -10,10 +10,8 @@ database = MySQLDatabase(
     port=Config.database['port']
 )
 
-
-
 class BaseModel(Model):
     id = AutoField()
-    created_at = TimestampField(default=datetime.datetime.now)
+    created_at = DateTimeField(default=datetime.datetime.now)
     class Meta:
         database = database

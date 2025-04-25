@@ -6,3 +6,5 @@ def main_state_response(request, role, user_id):
         return get_main_response_guest(request)
     elif role == 'student':
         return get_main_response_student(request, user_id)
+    elif role == 'teacher':
+        return ...

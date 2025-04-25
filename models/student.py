@@ -10,3 +10,6 @@ class Student(BaseModel):
     description = TextField(null=True)
     login = ForeignKeyField(Login, backref='student', on_delete='SET NULL', null=True)
     status = BooleanField(default=True)
+
+    class Meta():
+        table_name = 'students'

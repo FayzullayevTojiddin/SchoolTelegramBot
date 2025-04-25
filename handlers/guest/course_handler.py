@@ -6,6 +6,8 @@ from locales.message import (
     join_request_sended_false
 )
 
+from states.register import RegisterState
+
 router = Router(name=__name__)
 
 

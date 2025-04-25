@@ -17,3 +17,6 @@ class Login(BaseModel):
             return login.password == password
         else:
             return True
+
+    class Meta():
+        table_name = 'logins'

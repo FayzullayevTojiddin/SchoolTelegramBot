@@ -9,3 +9,6 @@ class Notification(BaseModel):
     message = TextField()
     hidden = BooleanField(default=False)
     read = BooleanField(default=False)
+
+    class Meta():
+        table_name = 'notifications'

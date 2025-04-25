@@ -7,3 +7,6 @@ class HomeWork(BaseModel):
     completed = BooleanField(default=False)
     title = CharField(max_length=100)
     description = TextField(null=True)
+
+    class Meta():
+        table_name = 'homeworks'

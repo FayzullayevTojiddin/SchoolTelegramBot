@@ -5,6 +5,9 @@ from models.user import User
 
 from aiogram.fsm.context import FSMContext
 
+from states.register import RegisterState
+from services.any.register_service import RegisterService
+
 class AuthMiddleware(BaseMiddleware):
     async def __call__(
         self,
@@ -13,8 +16,6 @@ class AuthMiddleware(BaseMiddleware):
         data: Dict[str, Any],
     ) -> Any:
         state: FSMContext = data['state']
-        current_state = await state.get_state()
-        # print(current_state)
         if event.message:
             user_from = event.message.from_user
 
@@ -29,5 +30,5 @@ class AuthMiddleware(BaseMiddleware):
                 last_name = user_from.last_name, 
                 username = user_from.username
             )
-
+            
         return await handler(event, data)

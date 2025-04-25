@@ -1,6 +1,7 @@
 from peewee import *
 from .base import BaseModel
 from .login import Login
+from .user import User
 
 class Teacher(BaseModel):
     phone_number = CharField(max_length=13)
@@ -23,3 +24,14 @@ class Teacher(BaseModel):
             return []
         except:
             return []
+        
+    @classmethod
+    def getTeacherByUserId(cls, user_id):
+        user = User.get_user(user_id)
+        if user.login:
+            return user.login.teacher.get()
+        
+        return False
+
+    class Meta():
+            table_name = 'teachers'

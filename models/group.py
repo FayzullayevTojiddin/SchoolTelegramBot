@@ -17,3 +17,6 @@ class Group(BaseModel):
         from .homework import HomeWork
         group = cls.getGroupById(group_id)
         return group.homeworks.select().where(HomeWork.completed == False)
+    
+    class Meta():
+        table_name = 'groups'
